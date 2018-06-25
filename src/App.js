@@ -9,12 +9,14 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      show:true
+      show:true,
+      text:"My name is Puran chand"
     }
   }
 
   handleClick = () =>{
     // this.props.dispatch(updateValue(true));
+
   }
 
   render() {
