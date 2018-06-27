@@ -1,11 +1,10 @@
 import {combineReducers} from 'redux';
-import Reducer from './reducers';
+import ActiveReducer from './reducers';
 
 const allReducers = combineReducers({
 	
-	reducer: Reducer
+	reducersdata: ActiveReducer
 
 });
-
 
 export default allReducers;

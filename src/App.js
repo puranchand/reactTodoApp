@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { updateValue } from './actions/Action';
 import {connect} from 'react-redux';
@@ -10,23 +9,35 @@ class App extends Component {
     super(props)
     this.state = {
       show:true,
-      text:"My name is Puran chand"
     }
   }
 
   handleClick = () =>{
-    // this.props.dispatch(updateValue(true));
-
+     this.props.dispatch(updateValue('red'));
   }
 
-  render() {
+  handleChange = () =>{
+    let {data} = this.props.data
+     this.props.dispatch(updateValue('green'));
+  }
 
-    let {data} = this.props
-    console.log(data ,'data')
+
+
+  render() {
+    let {data} = this.props.data
+
     return (
-      <div className="App">
-      <h4>Data is in console</h4>
-      <button >Click it</button>
+
+      <div className="App" style={{background:data}}>
+      
+        <h4>{data}</h4>
+
+        {data !== 'red' ? 
+          <button onClick={this.handleClick.bind(this)}>Click it</button>
+          :
+          <button onClick={this.handleChange.bind(this)}>Click it</button>
+        }
+
       </div>
     );
   }
@@ -35,7 +46,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        data: state.reducer
+        data: state.reducersdata
     };
 }
 
