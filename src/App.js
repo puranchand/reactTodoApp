@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   handleChange = () =>{
-    let {data} = this.props.data
      this.props.dispatch(updateValue('green'));
   }
 
