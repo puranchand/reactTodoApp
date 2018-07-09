@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/ActionTypes'; 
 
 const initialState = {
-	data:'green',
+	data:'React',
 }
 
 export default function (state = initialState,action){
